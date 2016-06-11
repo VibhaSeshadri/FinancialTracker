@@ -21,6 +21,9 @@ public class Spending {
 	public void setCost(int cost){
 		myCost=cost;
 	}
+	public int getCost(){
+		return myCost;
+	}
 	public void setCategory(String category){
 		myCategory=category;
 	}

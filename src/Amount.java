@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Amount {
+public class Amount extends Spending {
 	public int total;
 	
 	public Amount(){
@@ -38,8 +38,9 @@ public class Amount {
 		}
 	}
 	
-	public void aSubtract(){
-		
+	public int aSubtract(){
+		total-=this.getCost();
+		return total;
 	}
 	
 	
