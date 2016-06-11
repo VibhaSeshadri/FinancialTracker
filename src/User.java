@@ -23,10 +23,10 @@ public class User {
 		myBudget=budget;
 
 	}
-	public void setName(String firstName, String lastName){
+/*	public void setName(String firstName, String lastName){
 		firstName=myFirstName;
 		lastName=myLastName;
-	}
+	}*/
 	/*setBudget() allows the user to create goals as to how much they want to budget for*/
 	public void setBudget(){
 		/*String category;

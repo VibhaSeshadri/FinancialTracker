@@ -7,39 +7,47 @@ public class Amount extends Spending {
 	}
 	
 	public void inputAmount(){
-		Scanner totalSavings = new Scanner(System.in);
 		System.out.println("How much money do you have?");
-		total = totalSavings.nextInt();
+		total =Integer.parseInt(sc.nextLine());
 		System.out.println("You have entered you have $" + total + ".");
-		if(totalSavings!=null){
-			totalSavings.close();
-		}
 	}
 	
+	public String question(){
+		String choice = "";
+		System.out.println("Do you want to add/subtract money from what you currently have? "
+				+ "You don't need to subtract money from your total savings when you shop, " 
+				+ "because we will do that for you.");
+		choice=sc.nextLine();
+		return choice;
+	}
+	
+	public void changes(){
+		String option="";
+		System.out.println("Do you want to add or subtract money?");
+		option = sc.nextLine();
+		if(option.equalsIgnoreCase("add")){
+			this.addAmount();
+		}
+		else{
+			this.manualSubtract();
+		}
+	}
 	public void addAmount(){
-		Scanner newAddition = new Scanner(System.in);
 		System.out.println("How much money do you want to add?");
-		int add = newAddition.nextInt();
+		int add = Integer.parseInt(sc.nextLine());
 		total+=add;
 		System.out.println("Your new total balance is: $" + total);
-		if(newAddition!=null){
-			newAddition.close();
-		}
 	}
 	
 	public void manualSubtract(){
-		Scanner mWithdrawal = new Scanner(System.in);
 		System.out.println("How much do you want to withdraw?");
-		int mSubtract = mWithdrawal.nextInt();
+		int mSubtract = Integer.parseInt(sc.nextLine());
 		total-=mSubtract;
 		System.out.println("Your new total balance is: $" + total);
-		if(mWithdrawal!=null){
-			mWithdrawal.close();
-		}
 	}
 	
 	public int aSubtract(){
-		total-=this.getCost();
+		total-=this.getTotalCost();
 		return total;
 	}
 	
